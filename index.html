@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+        /* for android */
+
+        body{
+            background-image: url("nature.jpg");
+            background-repeat: no-repeat;
+       max-width: 100px;
+            display:flow-root;
+            background-attachment: fixed;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        input{
+            display: none;
+        }
+        .container{
+            width: 180%;
+            text-align: center;
+margin-left: 22px;
+        }
+        h1{
+            font-weight: normal;
+            font-size: 25px;
+        position: relative;
+font-family:'Times New Roman', Times, serif;
+    color:rgb(44, 44, 44);
+    font-weight: bold;
+    margin-left: 90px;
+ 
+        }
+        h1::before{
+            content: '';
+            position:absolute;
+            width: 100px;
+            height: 3px;
+            background-color: crimson;
+            bottom: -5px;
+            left: 63px;
+            transform: translateX(-25%);
+            animation: animate 2s linear infinite;
+        }
+        @keyframes animate
+        {
+            0%{
+                width: 50px;
+
+            }
+            50%{
+                width: 100px;
+               
+            }
+            100%{
+                width: 50px;
+               
+            }
+        }
+        .top-content{
+            background-color: rgb(238, 233, 233);
+            width: 350px;
+            margin: 0 auto 20px auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px lightgray;
+margin-top: 30px;
+
+        }
+
+        
+        label{
+            display: inline-block;
+            height: 100%;
+            margin: 0 20px;
+            line-height: 60px;
+            font-size: 20px;
+            color: rgb(51, 50, 50);
+            cursor: pointer;
+            transition: color .5s;
+            font-weight: bold;
+        }
+        label:hover{
+            color:white;
+
+        }
+        .photo-gallery{
+            width:200%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+       
+        }
+.pic{
+    position:relative;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px lightgray;
+    cursor: pointer;
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+border-radius: 10px;
+transition: .5s;
+}
+.pic::before{
+ 
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: .5s;
+    transition-delay: .2s;
+   }
+  
+    .pic::after{
+content: "";
+position:absolute;
+width: 100%;
+bottom: 0;
+left: 0;
+border-radius: 10px;
+height: 0;
+background-color:rgba(0, 0, 0, .4);
+transition: .5s;
+   } 
+
+
+.pic:hover::after{
+    height: 100%;
+transition: .5s;
+}
+.pic:hover::before{
+margin-top: 0;
+opacity: 1;
+}
+#check1:checked ~ .container .photo-gallery .cars{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;}
+ #check1:checked ~ .container .photo-gallery .anime,
+#check1:checked ~ .container .photo-gallery .weapons
+{
+    transform: scale(0);
+    opacity: 0;
+    position:absolute;
+    
+}
+
+#check2:checked ~ .container .photo-gallery .anime{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+
+#check2:checked ~ .container .photo-gallery .cars,
+#check2:checked ~ .container .photo-gallery .weapons
+{
+    transform: scale(0);
+    opacity: 0;
+    position:absolute;
+}
+#check3:checked ~ .container .photo-gallery .weapons{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+
+#check3:checked ~ .container .photo-gallery .cars,
+#check3:checked ~ .container .photo-gallery .anime
+
+{
+
+    transform: scale(0);
+    opacity: 0;
+    position:absolute;
+}
+h2{
+    align-items: center;
+    color: rgb(46, 8, 8);
+    margin-top: 15px;
+    margin-left: 150px;
+}
+
+
+    </style>
+</head>
+</style>
+<body>
+    <input type="radio" name="photos" id="check1" checked>
+    <input type="radio" name="photos" id="check2">
+    <input type="radio" name="photos" id="check3">
+  
+    <div class="container">
+      <h2>4K</h2> <h1>WALLPAPERS </h1>
+        <div class="top-content">
+        
+            <label for="check1">CARS</label>
+            <label for="check2">ANIME</label>
+            <label for="check3">WEAPONS</label>
+
+        </div>
+       
+      
+            <div class="photo-gallery">
+                <div class="pic cars">
+                    <img src="car1.jpg">
+                    
+                </div>
+                
+                <div class="pic anime">
+                    <img src="anime1.jpg">
+                    
+                </div>
+                <div class="pic weapons">
+                    <img src="weapon1.jpg">
+                    
+                </div>
+            
+                    <div class="pic cars">
+                        <img src="car2.jpg">
+                    </div>
+                    <div class="pic cars">
+                        <img src="car3.jpg">
+                    </div>
+                        <div class="pic cars">
+                            <img src="car4.jpg">
+                        </div>
+                        <div class="pic cars">
+                            <img src="car5.jpg">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
